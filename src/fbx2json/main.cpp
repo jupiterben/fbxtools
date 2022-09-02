@@ -43,7 +43,7 @@ int main(int argc, char **argv)
     int fbxFileVersion = -1;
     if (LoadScene(pManager, pScene, input.c_str(), fbxFileVersion))
     {
-        json j = exportScene(pScene);
+        json j = Fbx2Json::exportScene(pScene);
         std::ofstream out(output);
         out << j.dump(4);
     }
